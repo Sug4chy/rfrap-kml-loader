@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: rfrap-km-loader
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ddd
+    username: postgres
+    password: postGet5243
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+rfrap-kml-loader:
+  kml-file-name: ${KML_FILE_NAME}
