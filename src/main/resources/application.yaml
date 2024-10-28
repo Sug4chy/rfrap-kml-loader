@@ -3,13 +3,19 @@ spring:
     name: rfrap-km-loader
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/ddd
-    username: postgres
-    password: postGet5243
+    url: jdbc:postgresql://localhost:5432/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASS}
   jpa:
     hibernate:
       ddl-auto: validate
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
+  batch:
+    jdbc:
+      initialize-schema: always
 
 rfrap-kml-loader:
   kml-file-name: ${KML_FILE_NAME}

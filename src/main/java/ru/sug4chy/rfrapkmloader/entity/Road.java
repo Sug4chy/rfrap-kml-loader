@@ -6,7 +6,6 @@ import lombok.Setter;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -20,13 +19,7 @@ public class Road {
     @Column(name = "id", nullable = false)
     private UUID id;
 
-    @ManyToMany
-    @JoinTable(
-            name = "region_road",
-            schema = "public",
-            joinColumns = @JoinColumn(name = "road_id"),
-            inverseJoinColumns = @JoinColumn(name = "region_id")
-    )
+    @ManyToMany(mappedBy = "roads")
     private Set<Region> regions;
 
     @Column(name = "road_name", nullable = false)

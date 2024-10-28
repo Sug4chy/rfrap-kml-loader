@@ -15,7 +15,7 @@ public class PointXmlModel {
     @XStreamAlias("coordinates")
     private String coordinates;
 
-    public void setCoordinates() {
+    public void writeCoordinates() {
         String[] coordinatesSplit = this.coordinates.split(",");
 
         this.latitude = Double.parseDouble(coordinatesSplit[0]);
