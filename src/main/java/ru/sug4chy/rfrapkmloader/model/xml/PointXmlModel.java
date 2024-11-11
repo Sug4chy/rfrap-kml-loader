@@ -18,7 +18,7 @@ public class PointXmlModel {
     public void writeCoordinates() {
         String[] coordinatesSplit = this.coordinates.split(",");
 
-        this.latitude = Double.parseDouble(coordinatesSplit[0]);
-        this.longitude = Double.parseDouble(coordinatesSplit[1]);
+        this.longitude = Double.parseDouble(coordinatesSplit[0]);
+        this.latitude = Double.parseDouble(coordinatesSplit[1]);
     }
 }
